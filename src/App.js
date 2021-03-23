@@ -70,6 +70,8 @@ const useReducerWithMiddleware = (
     afterwareFns.forEach((afterwareFn) =>
       afterwareFn(aRef.current, state)
     );
+    
+    aRef.current = null;
   }, [afterwareFns, state]);
 
   return [state, dispatchWithMiddleware];
